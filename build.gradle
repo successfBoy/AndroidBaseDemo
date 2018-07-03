@@ -19,9 +19,16 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven {
+            // All of React Native (JS, Android binaries) is installed from npm
+            url "$rootDir/react_code/node_modules/react-native/android"
+        }
     }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+
+

@@ -1,0 +1,16 @@
+{
+  "name": "MyReactNativeApp",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "build": "react-native bundle --platform android --dev false --entry-file jsbundles/index.android.js --bundle-output ../app/src/main/assets/index.android.bundle --assets-dest ../app/src/main/res/"
+  },
+  "dependencies": {
+    "npm": "^6.1.0",
+    "react": "16.0.0-alpha.12",
+    "react-native": "0.45.1",
+    "to": "^0.2.9",
+    "update": "^0.7.4"
+  }
+}
