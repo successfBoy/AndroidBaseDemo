@@ -8,4 +8,10 @@ package com.lpc.androidbasedemo.algorithmic.utils;
  */
 public class Costants {
     public static final int ALGORITHMIC_ID_FASTSORT=1;
+    public static final int ALGORITHMIC_ID_MAOPAOSORT=2;
+    public static final int ALGORITHMIC_ID_SELECTSORTT=3;
+
+
+    public static final int ALGORITHMIC_ID_REVERSENODE=11;
+
 }

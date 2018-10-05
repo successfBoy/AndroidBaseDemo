@@ -6,11 +6,12 @@ import {
   Text,
   View
 } from 'react-native';
+import MyNativeAndroidToast from '../native_modules/MyNativeAndroidToast';
 class MyReactNativeApp extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.hello}>{'Hello, reactnative'}</Text>
+        <Text onPress={()=>MyNativeAndroidToast.show('click',MyNativeAndroidToast.SHORT)} style={styles.hello}>{'Hello, reactnative'}</Text>
       </View>
     )
   }

@@ -1,4 +1,4 @@
-package com.lpc.androidbasedemo.design.pattern;
+package com.lpc.androidbasedemo.design;
 
 /*
  * @author lipengcheng

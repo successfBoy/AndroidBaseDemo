@@ -37,6 +37,7 @@ public class ReactNativeActivity extends AppCompatActivity implements DefaultHar
                 //需和index.android 的路径一致
                 .setJSMainModuleName("jsbundles/index.android")
                 .addPackage(new MainReactPackage())
+                .addPackage(new MyReactPackage())
                 .setUseDeveloperSupport(true)
                 .setInitialLifecycleState(LifecycleState.RESUMED)
                 .build();
