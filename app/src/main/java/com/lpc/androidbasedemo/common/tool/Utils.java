@@ -17,10 +17,8 @@ public class Utils {
         }
         return 0;
     }
-
     public static int getHeight(Context context){
         WindowManager wm = (WindowManager)context.getSystemService(context.WINDOW_SERVICE);
-
         return wm.getDefaultDisplay().getHeight();
     }
 }

@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.lpc.androidbasedemo">
-    <uses-permission android:name="android.permission.INTERNET" />
+<manifest package="com.lpc.androidbasedemo"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
     <application
         android:name=".activity.BaseDemoApplication"
         android:allowBackup="true"
@@ -10,16 +14,68 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id"/>
+
         <activity android:name=".activity.MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <activity android:name=".algorithmic.view.activity.AlgorithmicActivity"/>
         <activity android:name=".reactnative.ReactNativeActivity"/>
-        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity"/>
+        <activity android:name=".test.TestActivity"/>
+        <activity android:name=".thirdsdk.share.ShareActivity"/>
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges=
+                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name"
+            android:theme="@style/com_facebook_activity_theme"/>
+
+
+        <provider
+            android:name="com.facebook.FacebookContentProvider"
+            android:authorities="com.facebook.app.FacebookContentProvider1165807926908404"
+            android:exported="true"/>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.lpc.androidbasedemo.androidbasedemo.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"/>
+        </provider>
+
+        <activity android:name=".activity.TestActivity1"
+            android:launchMode="standard"
+            />
+        <activity android:name=".activity.TestActivity2"
+                  android:launchMode="singleTask"
+            />
+        <activity android:name=".activity.TestActivity3"
+            android:launchMode="singleInstance"
+            />
+
+        <activity android:name=".initenttest.FirstActivity" android:process=":remote">
+            <intent-filter>
+                <action android:name="com.test.firstactivity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".initenttest.SecondActivity"/>
+        <activity android:name=".aidl.DemoActivity"/>
+
+        <activity android:name="com.sixfriend.shiyou.mylibrary.plugin.PoxyActivity"/>
+
+        <service android:name=".aidl.MessengerService"/>
     </application>
 
 </manifest>

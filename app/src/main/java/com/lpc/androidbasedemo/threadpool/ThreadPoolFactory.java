@@ -25,8 +25,8 @@ public class ThreadPoolFactory {
         ThreadPoolExecutor executor = new ThreadPoolExecutor(5,10,3000,
                 TimeUnit.SECONDS,new ArrayBlockingQueue<Runnable>(5));
         ThreadPoolExecutor executor1;
-        executor1 = new ThreadPoolExecutor(5,10,3000,
-                TimeUnit.SECONDS,new LinkedBlockingDeque<>(),new MyThreadFactory());
+
+        executor1 = new ThreadPoolExecutor(5,10,3000,TimeUnit.SECONDS,new LinkedBlockingDeque<Runnable>(),new MyThreadFactory());
 
         Runnable runnable = new Runnable() {
             @Override

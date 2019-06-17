@@ -1,7 +1,10 @@
 package com.lpc.androidbasedemo.algorithmic.view.activity;
 
 import android.animation.ValueAnimator;
+import android.app.LoaderManager;
 import android.os.Handler;
+import android.os.HandlerThread;
+import android.os.Message;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -21,6 +24,7 @@ import com.lpc.androidbasedemo.algorithmic.utils.SortUtils;
 import com.lpc.androidbasedemo.algorithmic.view.adapter.AlgorithmicAdpt;
 import com.lpc.androidbasedemo.common.tool.LogUtils;
 import com.lpc.androidbasedemo.common.tool.Utils;
+import com.lpc.googlesigin.processor.CustomAnnotation;
 
 import java.util.List;
 
@@ -30,6 +34,7 @@ import java.util.List;
  * create at  2018/6/25
  * description: 算法
  */
+@CustomAnnotation("com.lpc.androidbasedemo.algorithmic.view.activity.AlgorithmicActivity")
 public class AlgorithmicActivity extends BaseActivity implements IAlgorithmicView, View.OnClickListener {
     private String TAG = "AlgorithmicActivity";
     private RecyclerView mRecyclerView;
@@ -61,7 +66,12 @@ public class AlgorithmicActivity extends BaseActivity implements IAlgorithmicVie
         mLayoutResult = (RelativeLayout) findViewById(R.id.ll_result);
         mCloseResult = (Button) findViewById(R.id.close);
         mCloseResult.setOnClickListener(this);
-        Handler handler = new Handler();
+
+
+        HandlerThread thread = new HandlerThread("uploadImage");
+        thread.start();
+        Handler handler = new Handler(thread.getLooper());
+        handler.sendEmptyMessage(1);
     }
 
     @Override
@@ -84,7 +94,7 @@ public class AlgorithmicActivity extends BaseActivity implements IAlgorithmicVie
                 SortUtils.selectSort(a);
                 break;
             case Costants.ALGORITHMIC_ID_REVERSENODE:
-                CommonAlgorithmic.reverseListNode();
+                CommonAlgorithmic.reverseNode();
                 break;
         }
 //        dropResultLayout(false);
@@ -132,4 +142,6 @@ public class AlgorithmicActivity extends BaseActivity implements IAlgorithmicVie
                 break;
         }
     }
+
+
 }
