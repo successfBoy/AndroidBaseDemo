@@ -1,12 +1,8 @@
 package com.lpc.androidbasedemo.test;
 
-import android.util.Log;
-
-import junit.framework.TestFailure;
 
 import java.io.IOError;
 import java.io.IOException;
-import java.util.LinkedList;
 
 /*
  * @author lipengcheng

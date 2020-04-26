@@ -14,4 +14,5 @@ public class Student extends Person {
         super();
         System.out.print("My name is "+name+"\n");
     }
+
 }

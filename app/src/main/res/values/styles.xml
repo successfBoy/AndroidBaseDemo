@@ -8,4 +8,15 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <declare-styleable name="doodle_MyAudioWave">
+        <attr name="doodle_border_width" format="dimension" />
+        <attr name="doodle_AFTopColor" format="color" />
+        <attr name="doodle_top_color" format="color"/>
+        <attr name="doodle_AFDownColor" format="color"/>
+        <attr name="doodle_AFCount" format="integer"/>
+        <attr name="doodle_AFWidth" format="integer"/>
+        <attr name="doodle_AFSpeed" format="integer"/>
+        <attr name="doodle_AFOffset" format="integer"/>
+    </declare-styleable>
+
 </resources>

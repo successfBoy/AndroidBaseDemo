@@ -1,28 +1,48 @@
 package com.lpc.androidbasedemo.activity;
 
-import android.app.Application;
+import android.support.multidex.MultiDexApplication;
 
 import com.facebook.FacebookSdk;
 import com.lpc.androidbasedemo.BuildConfig;
 import com.lpc.androidbasedemo.common.tool.LogUtils;
 import com.squareup.leakcanary.LeakCanary;
 
+import java.util.Properties;
+
 /*
- * @author lipengcheng
+ * @author lipengcheng\
  * @emil lipengcheng8616@163.com
  * create at  2018/6/29
  * description:
  */
-public class BaseDemoApplication extends Application {
+public class BaseDemoApplication extends MultiDexApplication {
     @Override
     public void onCreate() {
         super.onCreate();
         initLogUtils();
         if (!FacebookSdk.isInitialized()) {
+
             FacebookSdk.sdkInitialize(getApplicationContext());
         }
 
         initLeakCanary();
+
+        initNetProxy();
+
+    }
+
+    private void initNetProxy() {
+        Properties prop = System.getProperties();
+        //proxyhostIPaddress
+        String proxyHost = "localhost";
+        //proxyport
+        String proxyPort = "8118";
+        prop.put("proxyHost", proxyHost);
+        prop.put("proxyPort", proxyPort);
+        prop.put("proxySet", "true");
+
+//在对相关的网络库进行初始化
+//        OkGo.init(this);
     }
 
     private void initLeakCanary() {

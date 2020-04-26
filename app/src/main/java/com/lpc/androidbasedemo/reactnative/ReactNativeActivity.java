@@ -10,9 +10,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.widget.LinearLayout;
 
+import com.facebook.react.LifecycleState;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactRootView;
-import com.facebook.react.common.LifecycleState;
 import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler;
 import com.facebook.react.shell.MainReactPackage;
 import com.lpc.androidbasedemo.R;
@@ -67,7 +67,7 @@ public class ReactNativeActivity extends AppCompatActivity implements DefaultHar
     protected void onPause() {
         super.onPause();
         if(mReactInstanceManager != null){
-            mReactInstanceManager.onHostPause(this);
+            mReactInstanceManager.onPause();
         }
     }
 
@@ -75,7 +75,7 @@ public class ReactNativeActivity extends AppCompatActivity implements DefaultHar
     protected void onResume() {
         super.onResume();
         if(mReactInstanceManager != null){
-            mReactInstanceManager.onHostResume(this,this);
+            mReactInstanceManager.onResume(this,this);
         }
     }
 
@@ -102,7 +102,7 @@ public class ReactNativeActivity extends AppCompatActivity implements DefaultHar
     protected void onDestroy() {
         super.onDestroy();
         if(mReactInstanceManager != null){
-            mReactInstanceManager.onHostDestroy(this);
+            mReactInstanceManager.onDestroy();
         }
     }
 }
