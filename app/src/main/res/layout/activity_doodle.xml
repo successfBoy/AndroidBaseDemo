@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:pushtouch="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/ll_top"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:background="@android:color/holo_blue_light">
+
+    </LinearLayout>
+
+
+    <LinearLayout
+    android:id="@+id/topLayout"
+    android:layout_width="match_parent"
+        android:layout_below="@+id/ll_top"
+    android:layout_height="50dp"
+    >
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:text="连接"
+        android:onClick="connect"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="进房"
+        android:onClick="joinRoom"/>
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="撤销"
+        android:onClick="back"/>
+    <Button
+        android:id="@+id/btn_forward"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="反撤销"
+        android:onClick="forward"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="授权/取消"
+        android:onClick="changeAuthorizeState"/>
+</LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/topLayout"
+        android:gravity="center_vertical"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="房间号："/>
+         <EditText
+            android:id="@+id/edit_text_roomid"
+            android:layout_width="300px"
+            android:layout_height="match_parent"
+            android:hint="roomId"
+            android:text="5523"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="用户id："/>
+        <EditText
+            android:id="@+id/edit_text_uid"
+            android:layout_width="450px"
+            android:layout_height="match_parent"
+            android:text="123456781"/>
+    </LinearLayout>
+    <View
+        android:id="@+id/view_divide1"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/ll_edit_text"
+        android:background="#000000">
+    </View>
+    <View
+        android:id="@+id/view_divide2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/bottom_layout"
+        android:layout_marginBottom="5dp"
+        android:background="#000000">
+    </View>
+
+    <com.weclassroom.scribble.ScribbleView
+        android:id="@+id/doodle_surfaceview"
+        android:layout_below="@+id/view_divide1"
+        android:layout_above="@+id/view_divide2"
+        android:focusable="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:id="@+id/bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/darker_gray"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/color_picker"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@null"
+            android:gravity="center"
+            android:text="颜色" />
+
+        <Button
+            android:id="@+id/paint_picker"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@null"
+            android:gravity="center"
+            android:text="粗细" />
+
+        <Button
+            android:id="@+id/eraser_picker"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@null"
+            android:gravity="center"
+            android:visibility="invisible"
+            android:text="橡皮" />
+
+        <Button
+            android:id="@+id/shape_picker"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@null"
+            android:gravity="center"
+            android:onClick="exitRoom"
+            android:text="退房" />
+    </LinearLayout>
+
+</RelativeLayout>

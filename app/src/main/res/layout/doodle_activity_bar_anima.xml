@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_bar_anima"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/doodle_activity_vertical_margin"
+    android:paddingLeft="@dimen/doodle_activity_horizontal_margin"
+    android:paddingRight="@dimen/doodle_activity_horizontal_margin"
+    android:paddingTop="@dimen/doodle_activity_vertical_margin">
+    <com.lpc.androidbasedemo.scribble.view.MyAudioWave
+        android:id="@+id/myaf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        custom:doodle_AFCount="50"
+        custom:doodle_AFDownColor="@color/doodle_down_color"
+        custom:doodle_AFSpeed="200"
+        custom:doodle_AFTopColor="@color/doodle_top_color"
+        custom:doodle_AFOffset="15"
+        />
+</RelativeLayout>

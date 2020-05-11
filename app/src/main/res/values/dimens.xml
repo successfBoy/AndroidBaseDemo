@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--涂鸦-->
+    <dimen name="doodle_activity_horizontal_margin">16dp</dimen>
+    <dimen name="doodle_activity_vertical_margin">16dp</dimen>
+
+</resources>
