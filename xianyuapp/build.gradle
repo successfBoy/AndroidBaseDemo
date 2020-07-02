@@ -1,0 +1,69 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion setup.compileSdk
+    buildToolsVersion setup.buildTools
+    defaultConfig {
+        applicationId "com.demo.fish"
+        minSdkVersion setup.minSdk
+        targetSdkVersion setup.targetSdk
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testImplementation( 'junit:junit:4.12')
+
+    //Support
+    implementation "com.android.support:appcompat-v7:${versions.supportLib}"
+    implementation "com.android.support:recyclerview-v7:${versions.supportLib}"
+    implementation "com.android.support:support-annotations:${versions.supportLib}"
+    implementation "com.android.support:design:${versions.supportLib}"
+    implementation "com.android.support:support-vector-drawable:${versions.supportLib}"
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+
+    //NetWork
+    implementation "com.squareup.okio:okio:${versions.okio}"
+    implementation "com.squareup.okhttp3:okhttp:${versions.okhttp3}"
+
+    //Retrofit
+    implementation "com.squareup.retrofit2:retrofit:${versions.retrofit2}"
+    implementation "com.squareup.retrofit2:converter-gson:${versions.retrofit2}"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:${versions.retrofit2}"
+
+    //ImageLoader
+    implementation "com.facebook.fresco:fresco:1.13.0"
+    implementation "com.facebook.fresco:imagepipeline-okhttp3:1.13.0"
+
+    implementation('com.mikepenz:materialdrawer:5.8.2@aar') {
+        transitive = true
+    }
+    implementation project(':brvah')
+
+    implementation "io.reactivex.rxjava2:rxjava:${versions.rxjava}"
+    implementation "io.reactivex.rxjava2:rxandroid:${versions.rxandroid}"
+}
