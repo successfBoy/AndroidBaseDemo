@@ -1,8 +1,6 @@
 package com.lpc.androidbasedemo.activity;
 
-import android.app.Notification;
 import android.content.ComponentName;
-import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
@@ -19,11 +17,9 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.lpc.androidbasedemo.R;
-import com.lpc.androidbasedemo.aidl.DemoActivity;
-import com.lpc.androidbasedemo.initenttest.FirstActivity;
-import com.lpc.androidbasedemo.thirdsdk.share.ShareActivity;
 import com.lpc.androidbasedemo.view.ThreeDSlidingLayout;
 import com.lpc.googlesigin.processor.CustomAnnotation;
+import com.lpc.widget.WidgetListActivity;
 
 @CustomAnnotation("com.lpc.androidbasedemo.activity.MainActivity")
 public class MainActivity extends BaseActivity {
@@ -102,7 +98,9 @@ public class MainActivity extends BaseActivity {
                 testNum = 2;
                 Toast.makeText(MainActivity.this, text, Toast.LENGTH_SHORT).show();
 //                startActivity(new Intent("com.test.firstactivity"));
-                startActivity(new Intent(MainActivity.this, DemoActivity.class));
+//                startActivity(new Intent(MainActivity.this, DemoActivity.class));
+                startActivity(new Intent(MainActivity.this, WidgetListActivity.class));
+
             }
         });
 

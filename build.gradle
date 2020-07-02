@@ -3,6 +3,23 @@
 buildscript {
     ext.kotlin_version = '1.3.61'
 
+
+    ext {
+        setup = [compileSdk: 29,
+                 buildTools: "27.0.2",
+                 minSdk    : 16,
+                 targetSdk : 29]
+
+        versions = [supportLib: "27.0.2",
+                    okio      : "+",
+                    okhttp3   : "+",
+                    retrofit2 : "+",
+                    fresco    : "+",
+                    rxjava    : "+",
+                    rxandroid : "+"]
+    }
+
+
     repositories {
         google()
         jcenter()

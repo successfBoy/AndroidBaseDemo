@@ -80,6 +80,10 @@
         <activity android:name="com.sixfriend.shiyou.mylibrary.plugin.PoxyActivity"/>
 
         <service android:name=".aidl.MessengerService"/>
+
+        <activity android:name="com.lpc.widget.WidgetListActivity"/>
+
+        <activity android:name=".activity.HomeActivity"/>
     </application>
 
 </manifest>

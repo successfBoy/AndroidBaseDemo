@@ -1,1 +1,2 @@
-include ':app', ':processor', ':plugin', ':mylibrary'
+include ':widget'
+include 'zhifubaoapp' ,'xianyuapp', ':app', ':processor', ':plugin', ':mylibrary' , 'brvah' , 'zhifubaoceshi'

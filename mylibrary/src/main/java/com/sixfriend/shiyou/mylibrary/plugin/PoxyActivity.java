@@ -4,8 +4,8 @@ import android.app.Activity;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 
 /*
@@ -28,6 +28,12 @@ public class PoxyActivity extends Activity {
         mClassName = getIntent().getStringExtra("className");
         mPluginApk = PluginManager.getInstance().getPluginApk();
         launchPluginActivity();
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                startActivity(new Intent(PoxyActivity.this , WidgetListActivity.class));
+            }
+        });
     }
 
     private void launchPluginActivity() {

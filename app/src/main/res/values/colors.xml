@@ -4,6 +4,13 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
+    
+    <color name="transparent">#00FFFFFF</color>
+    <color name="line_color">#CCCCCC</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="titlecolor">#1296db</color>
+    <color name="black">#000000</color>
+
     <color name="doodle_top_color">#ff0</color>
     <color name="doodle_down_color">#ff0</color>
 </resources>

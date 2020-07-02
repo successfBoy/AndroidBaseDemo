@@ -1,10 +1,13 @@
 package com.lpc.androidbasedemo.activity
 
 import android.app.Activity
+import android.content.Intent
 import android.media.MediaPlayer
 import android.net.Uri
 import android.os.Bundle
+import android.os.Handler
 import com.lpc.androidbasedemo.R
+import com.lpc.androidbasedemo.initenttest.FirstActivity
 import com.lpc.androidbasedemo.view.FullScreenVideoView
 import java.io.File
 
@@ -20,6 +23,16 @@ class SplashActivity : Activity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
         initView()
+        Handler().postDelayed(Runnable {
+            goMain()
+        } , 3000)
+    }
+
+
+    fun goMain(){
+        var intent = Intent(this@SplashActivity , HomeActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 
     private fun initView() {
