@@ -12,6 +12,7 @@ class FunctionItem {
     var background = ""
     var isTitle = false
     var subItemCount = 0
+    var jumpPath = ""
 
     constructor(name: String, isSelect: Boolean, imageUrl: String, background: String) {
         this.name = name

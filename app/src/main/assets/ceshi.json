@@ -29,7 +29,8 @@
         "name":"侧滑",
         "isSelect":false,
         "imageUrl":"icon_home_selected",
-        "background":"#86c751"
+        "background":"#86c751",
+        "jumpPath":"/app/MainActivity"
       }
     ]
   },

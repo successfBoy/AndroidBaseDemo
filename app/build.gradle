@@ -22,16 +22,27 @@ android {
         }
         javaCompileOptions {
 
-            annotationProcessorOptions {
-
-                includeCompileClasspath true
-
+            javaCompileOptions {
+                annotationProcessorOptions {
+                    arguments = [ AROUTER_MODULE_NAME : project.getName() ]
+                }
             }
         }
-        dataBinding {
-            enabled = true
-        }
+
+//        kapt {
+//            arguments {
+//                arg("moduleName", project.getName())
+//                arg("AROUTER_MODULE_NAME",project.getName())
+//            }
+//            generateStubs = true
+//        }
+
     }
+
+    dataBinding {
+        enabled = true
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -85,6 +96,10 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     implementation 'com.google.code.gson:gson:2.8.5'
+
+    implementation 'com.alibaba:arouter-api:1.5.0'
+
+    annotationProcessor'com.alibaba:arouter-compiler:1.2.0'
 
 }
 task processorTask(type: Exec) {

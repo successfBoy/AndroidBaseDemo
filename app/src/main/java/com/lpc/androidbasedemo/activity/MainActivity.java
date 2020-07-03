@@ -16,12 +16,14 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.lpc.androidbasedemo.R;
 import com.lpc.androidbasedemo.view.ThreeDSlidingLayout;
 import com.lpc.googlesigin.processor.CustomAnnotation;
 import com.lpc.widget.WidgetListActivity;
 
 @CustomAnnotation("com.lpc.androidbasedemo.activity.MainActivity")
+@Route(path = RouterConstance.ACTIVITY_URL_MAIN)
 public class MainActivity extends BaseActivity {
     public static String TAG = "MainActivity";
     public static int testNum = 0;

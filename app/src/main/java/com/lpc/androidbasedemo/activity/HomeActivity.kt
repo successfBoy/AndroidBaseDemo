@@ -4,11 +4,13 @@ import android.app.Activity
 import android.content.Context
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.text.TextUtils
 import android.util.DisplayMetrics
 import android.util.TypedValue
 import android.view.Gravity
 import android.view.View
 import android.widget.*
+import com.alibaba.android.arouter.launcher.ARouter
 import com.demo.recyclerxulc.FunctionBlockAdapter
 import com.lpc.androidbasedemo.R
 import com.lpc.androidbasedemo.activity.adapter.FunctionAdapter
@@ -60,7 +62,12 @@ class HomeActivity : BaseActivity() {
 
     private val onItemClickListener: OnItemClickListener =object :OnItemClickListener{
         override fun onItemClick(item: FunctionItem) {
-            ToastUtils.show(this@HomeActivity , "点击" + item.name)
+            if (TextUtils.isEmpty(item.jumpPath)){
+
+                ToastUtils.show(this@HomeActivity , "点击" + item.name)
+            } else {
+                ARouter.getInstance().build(item.jumpPath).navigation()
+            }
         }
 
     }

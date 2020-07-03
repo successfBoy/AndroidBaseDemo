@@ -32,7 +32,7 @@ public class SFUtils {
         String allData = sp.getString("allData","");
         List<FunctionItem> functionItems = new ArrayList<>();
         List<TabItem> tabItems = null;
-        if("".equals(allData)){
+//        if("".equals(allData)){
             try {
                 InputStream is = context.getAssets().open("ceshi.json");
                 InputStreamReader isr = new InputStreamReader(is);
@@ -58,10 +58,10 @@ public class SFUtils {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }else{
-            Gson gson = new Gson();
-            functionItems =  gson.fromJson(allData,new TypeToken<List<FunctionItem>>(){}.getType());
-        }
+//        }else{
+//            Gson gson = new Gson();
+//            functionItems =  gson.fromJson(allData,new TypeToken<List<FunctionItem>>(){}.getType());
+//        }
         return functionItems;
     }
 

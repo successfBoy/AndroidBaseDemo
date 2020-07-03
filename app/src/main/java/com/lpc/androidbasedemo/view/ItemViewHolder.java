@@ -2,9 +2,6 @@ package com.lpc.androidbasedemo.view;
 
 import android.databinding.ViewDataBinding;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
-
-import com.lpc.androidbasedemo.BR;
 
 /*
  * @author lipengcheng
@@ -19,7 +16,7 @@ public class ItemViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void bindTo(MultiTypeAdapter.IItem iItem){
-        mBinding.setVariable(BR.item, iItem);
+//        mBinding.setVariable(BR.item, iItem);
         mBinding.executePendingBindings();
     };
 }

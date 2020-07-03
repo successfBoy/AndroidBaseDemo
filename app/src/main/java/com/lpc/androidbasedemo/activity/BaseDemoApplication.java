@@ -2,6 +2,7 @@ package com.lpc.androidbasedemo.activity;
 
 import android.support.multidex.MultiDexApplication;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.facebook.FacebookSdk;
 import com.lpc.androidbasedemo.BuildConfig;
 import com.lpc.androidbasedemo.common.tool.LogUtils;
@@ -10,7 +11,7 @@ import com.squareup.leakcanary.LeakCanary;
 import java.util.Properties;
 
 /*
- * @author lipengcheng\
+ * @author lipengcheng
  * @emil lipengcheng8616@163.com
  * create at  2018/6/29
  * description:
@@ -19,6 +20,9 @@ public class BaseDemoApplication extends MultiDexApplication {
     @Override
     public void onCreate() {
         super.onCreate();
+
+
+        initARouter();
         initLogUtils();
         if (!FacebookSdk.isInitialized()) {
 
@@ -29,6 +33,10 @@ public class BaseDemoApplication extends MultiDexApplication {
 
         initNetProxy();
 
+    }
+
+    private void initARouter() {
+        ARouter.init(this);
     }
 
     private void initNetProxy() {
@@ -61,5 +69,11 @@ public class BaseDemoApplication extends MultiDexApplication {
                 .setLog2FileSwitch(false)// 打印log时是否存到文件的开关，默认关
                 .setBorderSwitch(true)// 输出日志是否带边框开关，默认开
                 .setLogFilter(LogUtils.V);// log过滤器，和logcat过滤器同理，默认Verbose
+    }
+
+    @Override
+    public void onTerminate() {
+        super.onTerminate();
+        ARouter.getInstance().destroy();
     }
 }
